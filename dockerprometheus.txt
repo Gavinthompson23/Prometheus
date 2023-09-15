@@ -1,0 +1,11 @@
+##text file for prometheus docker image command#
+sudo docker pull bitnami/prometheus:latest
+docker pull bitnami/node-exporter:latest
+docker run --name node-exporter bitnami/node-exporter:latest ## this will 
+#creates a container network for prometheus to run in and for development containers to test in/run
+sudo docker network create monitor
+#create a prometheus.yml file(already in this folder)
+#use this command to run the yml file and to run it's container on port 9090
+sudo docker run -d --name prometheus -p 9090:9090 --network monitor \-v $(pwd)/prometheus.yml:/opt/bitnami/prometheus/conf/prometheus.yml \bitnami/prometheus:latest
+#go to port 9090 and prometheus yaml would have given prometheus the containers to monitor 
+#flask has a library for the jquery commands but if there is none to my understanding prometheus will find the endpoints for you##edit:use node exporter for monitoring commands
