@@ -1,7 +1,7 @@
 ##text file for prometheus docker image command#
 sudo docker pull bitnami/prometheus:latest
 docker pull bitnami/node-exporter:latest
-docker run --name node-exporter bitnami/node-exporter:latest ## this will 
+docker run --name node-exporter bitnami/node-exporter:latest ## this will add some services to prometheus for monitoring the websites components.
 #creates a container network for prometheus to run in and for development containers to test in/run
 sudo docker network create monitor
 #create a prometheus.yml file(already in this folder)
